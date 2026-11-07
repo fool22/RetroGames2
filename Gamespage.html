@@ -1,363 +1,372 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explora la galería RetroGames y descubre experiencias inspiradas en los juegos clásicos.">
-    <title>RetroGames | Juegos</title>
-    <link rel="icon" href="img/hand.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetroGames | Galería de juegos</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            background: #040117;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-        }
+    body {
+      background: #040117;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+    }
 
-        header {
-            background: #1C0946;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            border-bottom: 2px solid #7C3B93;
-        }
+    header {
+      background: #1C0946;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #7C3B93;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .brand { display: flex; align-items: center; gap: 14px; }
 
-        .logo img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-        }
+    .brand img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
 
-        .logo h2 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 15px;
-        }
+    .brand h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 15px;
+    }
 
-        nav {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
+    nav { display: flex; gap: 24px; flex-wrap: wrap; }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .3s;
+    }
 
-        nav a:hover { color: #c58be0; }
+    nav a:hover { color: #c58ce0; }
 
-        .portada {
-            text-align: center;
-            padding: 65px 7%;
-            background: radial-gradient(circle, #200671, #040117 75%);
-        }
+    .banner {
+      text-align: center;
+      padding: 60px 8%;
+      background: linear-gradient(135deg, #200671, #510623);
+    }
 
-        .portada h1 {
-            font-family: 'Press Start 2P', cursive;
-            color: #c58be0;
-            font-size: clamp(22px, 4vw, 35px);
-            margin-bottom: 25px;
-            line-height: 1.8;
-        }
+    .banner h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(20px, 4vw, 32px);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
 
-        .portada p {
-            color: #ddd4eb;
-            font-size: 14px;
-            line-height: 1.8;
-        }
+    .banner p {
+      color: #eadcf5;
+      font-size: 14px;
+      line-height: 1.8;
+    }
 
-        .galeria {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            max-width: 1150px;
-            margin: auto;
-            padding: 50px 7%;
-        }
+    .games-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 55px 6%;
+    }
 
-        .juego {
-            height: 330px;
-            perspective: 1000px;
-            cursor: pointer;
-        }
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
 
-        .interior {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform .7s;
-        }
+    .game-card {
+      height: 350px;
+      perspective: 1000px;
+      cursor: pointer;
+      outline: none;
+    }
 
-        .juego.girada .interior {
-            transform: rotateY(180deg);
-        }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform .7s;
+      transform-style: preserve-3d;
+    }
 
-        .frente, .reverso {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border: 2px solid #7C3B93;
-            border-radius: 12px;
-            overflow: hidden;
-            background: linear-gradient(145deg, #1C0946, #200671);
-            box-shadow: 0 0 12px rgba(124, 59, 147, .25);
-        }
+    .game-card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
 
-        .frente img {
-            width: 100%;
-            height: 255px;
-            object-fit: cover;
-            display: block;
-        }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border: 2px solid #7C3B93;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 0 18px #7C3B9340;
+    }
 
-        .frente h3 {
-            text-align: center;
-            padding: 20px 10px;
-            color: #e3b9f5;
-            font-size: 15px;
-        }
+    .card-front {
+      background: #1C0946;
+    }
 
-        .reverso {
-            transform: rotateY(180deg);
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .reverso h3 {
-            font-family: 'Press Start 2P', cursive;
-            color: #d6a4ed;
-            font-size: 13px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
+    .card-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 17px 10px;
+      text-align: center;
+      background: linear-gradient(transparent, #040117);
+      font-size: 14px;
+      font-weight: 800;
+    }
 
-        .reverso p {
-            font-size: 12px;
-            line-height: 1.8;
-            color: #eee7f7;
-        }
+    .card-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, #200671, #510623);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      text-align: center;
+    }
 
-        .indicacion {
-            text-align: center;
-            color: #c58be0;
-            font-size: 12px;
-            padding: 0 15px 35px;
-        }
+    .card-back h3 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #e4b8ff;
+      margin-bottom: 20px;
+    }
 
-        footer {
-            background: #1C0946;
-            padding: 25px;
-            text-align: center;
-            border-top: 2px solid #7C3B93;
-            font-size: 11px;
-            line-height: 2;
-        }
+    .card-back p {
+      font-size: 12px;
+      line-height: 1.9;
+      color: #fff;
+    }
 
-        @media (max-width: 600px) {
-            header { justify-content: center; }
-            nav { justify-content: center; }
-            .logo h2 { font-size: 12px; }
-        }
+    .instruction {
+      text-align: center;
+      margin-top: 35px;
+      color: #cdb6e4;
+      font-size: 12px;
+      line-height: 1.8;
+    }
 
-        @media (prefers-reduced-motion: reduce) {
-            .interior { transition: none; }
-        }
-    </style>
+    footer {
+      background: #1C0946;
+      border-top: 2px solid #7C3B93;
+      text-align: center;
+      padding: 24px;
+      color: #d9c7ec;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .games-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 580px) {
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .games-grid { grid-template-columns: 1fr; }
+      .game-card { height: 380px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-inner { transition: none; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="img/logo-retro.jpeg" alt="Logo de RetroGames">
-        <h2>RETROGAMES</h2>
+  <header>
+    <div class="brand">
+      <img src="logo%20retro.jpeg" alt="Logo RetroGames">
+      <h2>RETROGAMES</h2>
     </div>
 
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="description.html">Descripción</a>
-        <a href="Gamespage.html">Juegos</a>
+      <a href="index.html">INICIO</a>
+      <a href="description.html">NOSOTROS</a>
+      <a href="Gamespage.html">JUEGOS</a>
     </nav>
-</header>
+  </header>
 
-<section class="portada">
+  <section class="banner">
     <h1>GALERÍA RETRO</h1>
-    <p>
-        Explora nuestra colección y descubre los desafíos
-        que estimulan tu imaginación y tu mente.
+    <p>Descubre cada personaje y explora el universo de RetroGames.</p>
+  </section>
+
+  <main class="games-container">
+
+    <div class="games-grid">
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta The Fool">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="Thefool.jpeg" alt="The Fool">
+            <div class="card-title">THE FOOL</div>
+          </div>
+          <div class="card-back">
+            <h3>THE FOOL</h3>
+            <p>Representa el inicio de una aventura, la curiosidad y la posibilidad de descubrir nuevos caminos.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta The Girl">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="the%20girl.jpeg" alt="The Girl">
+            <div class="card-title">THE GIRL</div>
+          </div>
+          <div class="card-back">
+            <h3>THE GIRL</h3>
+            <p>Una representación de la identidad, la creatividad y la exploración dentro de un universo visual.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta The Tower">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="the%20tower.jpeg" alt="The Tower">
+            <div class="card-title">THE TOWER</div>
+          </div>
+          <div class="card-back">
+            <h3>THE TOWER</h3>
+            <p>Simboliza los cambios inesperados y la capacidad de adaptarse ante nuevos desafíos.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta Kitti">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="kitti.jpeg" alt="Kitti">
+            <div class="card-title">KITTI</div>
+          </div>
+          <div class="card-back">
+            <h3>KITTI</h3>
+            <p>Un personaje que representa la imaginación, la diversión y el lado creativo de los videojuegos.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta The Death">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="The%20death.jpeg" alt="The Death">
+            <div class="card-title">THE DEATH</div>
+          </div>
+          <div class="card-back">
+            <h3>THE DEATH</h3>
+            <p>Representa la transformación, los finales y la oportunidad de comenzar una nueva etapa.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta The Dragon">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="the%20dragon.jpeg" alt="The Dragon">
+            <div class="card-title">THE DRAGON</div>
+          </div>
+          <div class="card-back">
+            <h3>THE DRAGON</h3>
+            <p>Un símbolo de fuerza, valentía y superación de obstáculos durante una aventura.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta The Justice">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="The%20justice.jpeg" alt="The Justice">
+            <div class="card-title">THE JUSTICE</div>
+          </div>
+          <div class="card-back">
+            <h3>THE JUSTICE</h3>
+            <p>Representa el equilibrio, la responsabilidad y la importancia de tomar decisiones.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta The Magician">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="The%20magician.jpeg" alt="The Magician">
+            <div class="card-title">THE MAGICIAN</div>
+          </div>
+          <div class="card-back">
+            <h3>THE MAGICIAN</h3>
+            <p>Simboliza la creatividad, la habilidad y el uso de los recursos para alcanzar objetivos.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="game-card" tabindex="0" role="button" aria-label="Voltear tarjeta The Hanged Man">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="The%20hanged%20man.jpeg" alt="The Hanged Man">
+            <div class="card-title">THE HANGED MAN</div>
+          </div>
+          <div class="card-back">
+            <h3>THE HANGED MAN</h3>
+            <p>Invita a observar las situaciones desde otra perspectiva y pensar antes de actuar.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="instruction">
+      HAZ CLIC O TOCA UNA TARJETA PARA DESCUBRIR SU DESCRIPCIÓN.
     </p>
-</section>
 
-<main>
-    <section class="galeria">
+  </main>
 
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Fool">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/thefool.jpeg" alt="Carta The Fool">
-                    <h3>The Fool</h3>
-                </div>
-                <div class="reverso">
-                    <h3>The Fool</h3>
-                    <p>Representa el comienzo de nuevas aventuras, la curiosidad y la exploración.</p>
-                </div>
-            </div>
-        </article>
+  <footer>
+    <p>RETROGAMES © 2026 | EL PASADO SE JUEGA, EL FUTURO SE APRENDE.</p>
+  </footer>
 
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Girl">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/the girl.jpeg" alt="Carta The Girl">
-                    <h3>The Girl</h3>
-                </div>
-                <div class="reverso">
-                    <h3>The Girl</h3>
-                    <p>Una invitación a descubrir nuevas perspectivas y desarrollar la creatividad.</p>
-                </div>
-            </div>
-        </article>
+  <script>
+    document.querySelectorAll('.game-card').forEach(card => {
+      function flipCard() {
+        card.classList.toggle('flipped');
+      }
 
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Tower">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/the tower.jpeg" alt="Carta The Tower">
-                    <h3>The Tower</h3>
-                </div>
-                <div class="reverso">
-                    <h3>The Tower</h3>
-                    <p>Simboliza los desafíos, la transformación y la capacidad de resolver problemas.</p>
-                </div>
-            </div>
-        </article>
+      card.addEventListener('click', flipCard);
 
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir Kitti">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/kitti.jpeg" alt="Carta Kitti">
-                    <h3>Kitti</h3>
-                </div>
-                <div class="reverso">
-                    <h3>Kitti</h3>
-                    <p>Una experiencia que representa la diversión, la imaginación y la curiosidad.</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Death">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/the death.jpeg" alt="Carta The Death">
-                    <h3>The Death</h3>
-                </div>
-                <div class="reverso">
-                    <h3>The Death</h3>
-                    <p>Representa el cambio, los nuevos comienzos y la adaptación a diferentes situaciones.</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Dragon">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/the dragon.jpeg" alt="Carta The Dragon">
-                    <h3>The Dragon</h3>
-                </div>
-                <div class="reverso">
-                    <h3>The Dragon</h3>
-                    <p>Representa la imaginación, la estrategia y el valor para afrontar retos.</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Justice">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/the justice.jpeg" alt="Carta The Justice">
-                    <h3>The Justice</h3>
-                </div>
-                <div class="reverso">
-                    <h3>The Justice</h3>
-                    <p>Invita a tomar decisiones, analizar situaciones y desarrollar el pensamiento crítico.</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Magician">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/the magician.jpeg" alt="Carta The Magician">
-                    <h3>The Magician</h3>
-                </div>
-                <div class="reverso">
-                    <h3>The Magician</h3>
-                    <p>Simboliza la creatividad, el ingenio y el uso de habilidades para superar retos.</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Hanged Man">
-            <div class="interior">
-                <div class="frente">
-                    <img src="img/the hanged man.jpeg" alt="Carta The Hanged Man">
-                    <h3>The Hanged Man</h3>
-                </div>
-                <div class="reverso">
-                    <h3>The Hanged Man</h3>
-                    <p>Representa la paciencia, la observación y la búsqueda de nuevas soluciones.</p>
-                </div>
-            </div>
-        </article>
-
-    </section>
-
-    <p class="indicacion">
-        HAZ CLIC O PULSA ENTER SOBRE UNA CARTA PARA DESCUBRIR SU DESCRIPCIÓN
-    </p>
-</main>
-
-<footer>
-    <p>RETROGAMES © 2026</p>
-    <p>El pasado se juega, el futuro se aprende.</p>
-</footer>
-
-<script>
-    function girar(elemento) {
-        elemento.classList.toggle("girada");
-    }
-
-    document.querySelectorAll(".juego").forEach(function (carta) {
-        carta.addEventListener("click", function () {
-            girar(carta);
-        });
-
-        carta.addEventListener("keydown", function (evento) {
-            if (evento.key === "Enter" || evento.key === " ") {
-                evento.preventDefault();
-                girar(carta);
-            }
-        });
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          flipCard();
+        }
+      });
     });
-</script>
+  </script>
 
 </body>
 </html>
