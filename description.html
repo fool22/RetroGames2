@@ -1,261 +1,238 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conoce el proyecto RetroGames, su misión, visión y objetivos.">
-    <title>RetroGames | Descripción</title>
-    <link rel="icon" href="img/hand.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetroGames | Nosotros</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            background: #040117;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-        }
+    body {
+      background: #040117;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+    }
 
-        header {
-            background: #1C0946;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            border-bottom: 2px solid #7C3B93;
-        }
+    header {
+      background: #1C0946;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #7C3B93;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .brand { display: flex; align-items: center; gap: 14px; }
 
-        .logo img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-        }
+    .brand img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
 
-        .logo h2 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 15px;
-        }
+    .brand h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 15px;
+    }
 
-        nav {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
+    nav { display: flex; gap: 24px; flex-wrap: wrap; }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .3s;
+    }
 
-        nav a:hover { color: #c58be0; }
+    nav a:hover { color: #c58ce0; }
 
-        .portada {
-            padding: 70px 8%;
-            text-align: center;
-            background: radial-gradient(circle, #200671, #040117 75%);
-        }
+    .banner {
+      padding: 65px 8%;
+      text-align: center;
+      background: linear-gradient(135deg, #200671, #510623);
+    }
 
-        .portada h1 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: clamp(22px, 4vw, 35px);
-            color: #c58be0;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
+    .banner h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(22px, 4vw, 34px);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
 
-        .portada p {
-            max-width: 850px;
-            margin: auto;
-            line-height: 1.9;
-            color: #ddd4eb;
-            font-size: 14px;
-        }
+    .banner p {
+      font-size: 15px;
+      color: #eadcf5;
+      line-height: 1.8;
+    }
 
-        .contenido {
-            max-width: 1100px;
-            margin: auto;
-            padding: 45px 7%;
-        }
+    .content {
+      max-width: 1100px;
+      margin: auto;
+      padding: 55px 7%;
+    }
 
-        .bloque {
-            background: linear-gradient(135deg, #1C0946, #200671);
-            border: 1px solid #7C3B93;
-            border-radius: 14px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 12px rgba(124, 59, 147, .2);
-        }
+    .info-section {
+      background: #1C0946;
+      border: 1px solid #7C3B93;
+      border-radius: 13px;
+      padding: 30px;
+      margin-bottom: 28px;
+      box-shadow: 0 5px 20px #0005;
+    }
 
-        .bloque h2 {
-            font-family: 'Press Start 2P', cursive;
-            color: #c58be0;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
+    .info-section h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #c58ce0;
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
 
-        .bloque p {
-            font-size: 14px;
-            line-height: 1.9;
-            color: #eee7f7;
-        }
+    .info-section p {
+      color: #e4dced;
+      font-size: 14px;
+      line-height: 2;
+    }
 
-        .objetivos {
-            padding-left: 22px;
-            color: #eee7f7;
-            line-height: 2;
-            font-size: 14px;
-        }
+    .objectives {
+      padding-left: 22px;
+      color: #e4dced;
+      font-size: 14px;
+      line-height: 2.2;
+    }
 
-        .contacto-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
 
-        .contacto-item {
-            padding: 20px;
-            background: #040117;
-            border: 1px solid #7C3B93;
-            border-radius: 10px;
-        }
+    .gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border: 2px solid #7C3B93;
+      border-radius: 10px;
+    }
 
-        .contacto-item h3 {
-            color: #c58be0;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
+    .contact p { margin-bottom: 10px; }
 
-        .contacto-item p {
-            font-size: 12px;
-            overflow-wrap: anywhere;
-        }
+    .contact a {
+      color: #e4b8ff;
+      text-decoration: none;
+    }
 
-        footer {
-            background: #1C0946;
-            padding: 25px;
-            text-align: center;
-            border-top: 2px solid #7C3B93;
-            font-size: 11px;
-            line-height: 2;
-        }
+    footer {
+      background: #1C0946;
+      border-top: 2px solid #7C3B93;
+      text-align: center;
+      padding: 24px;
+      color: #d9c7ec;
+      font-size: 11px;
+      line-height: 1.8;
+    }
 
-        @media (max-width: 600px) {
-            header { justify-content: center; }
-            nav { justify-content: center; }
-            .logo h2 { font-size: 12px; }
-            .bloque { padding: 23px; }
-        }
-    </style>
+    @media (max-width: 800px) {
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .gallery { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="img/logo-retro.jpeg" alt="Logo de RetroGames">
-        <h2>RETROGAMES</h2>
+  <header>
+    <div class="brand">
+      <img src="logo%20retro.jpeg" alt="Logo RetroGames">
+      <h2>RETROGAMES</h2>
     </div>
 
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="description.html">Descripción</a>
-        <a href="Gamespage.html">Juegos</a>
+      <a href="index.html">INICIO</a>
+      <a href="description.html">NOSOTROS</a>
+      <a href="Gamespage.html">JUEGOS</a>
     </nav>
-</header>
+  </header>
 
-<section class="portada">
-    <h1>¿QUÉ ES RETROGAMES?</h1>
-
-    <p>
-        RetroGames es un proyecto digital que recupera la esencia
-        de los videojuegos clásicos y la integra con experiencias
-        de aprendizaje. Su propósito es demostrar que el
-        entretenimiento también puede convertirse en una
-        herramienta para desarrollar habilidades cognitivas.
-    </p>
-</section>
-
-<main class="contenido">
-
-    <section class="bloque">
-        <h2>NUESTRA MISIÓN</h2>
-        <p>
-            RetroGames es una plataforma digital que busca promover
-            el aprendizaje y el desarrollo de habilidades cognitivas
-            mediante experiencias interactivas inspiradas en los
-            videojuegos clásicos. A través del entretenimiento,
-            fomenta la memoria, la concentración, el pensamiento
-            lógico y la agilidad mental.
-        </p>
-    </section>
-
-    <section class="bloque">
-        <h2>NUESTRA VISIÓN</h2>
-        <p>
-            Ser una plataforma educativa digital reconocida por
-            integrar el entretenimiento retro con nuevas experiencias
-            de aprendizaje, convirtiendo los videojuegos clásicos
-            en herramientas que estimulen el desarrollo cognitivo
-            y la creatividad de sus usuarios.
-        </p>
-    </section>
-
-    <section class="bloque">
-        <h2>NUESTROS OBJETIVOS</h2>
-        <ul class="objetivos">
-            <li>Promover el aprendizaje mediante videojuegos clásicos.</li>
-            <li>Estimular la memoria y la concentración.</li>
-            <li>Fortalecer el pensamiento lógico y estratégico.</li>
-            <li>Ofrecer experiencias digitales entretenidas e interactivas.</li>
-            <li>Relacionar la nostalgia de los juegos retro con la educación.</li>
-        </ul>
-    </section>
-
-    <section class="bloque">
-        <h2>CONTÁCTANOS</h2>
-        <p>
-            Queremos que formes parte de esta experiencia.
-            Conoce más sobre RetroGames y nuestro propósito.
-        </p>
-
-        <div class="contacto-grid">
-            <div class="contacto-item">
-                <h3>Correo electrónico</h3>
-                <p>contacto@retrogames.com</p>
-            </div>
-
-            <div class="contacto-item">
-                <h3>Teléfono</h3>
-                <p>+57 300 000 0000</p>
-            </div>
-
-            <div class="contacto-item">
-                <h3>Ubicación</h3>
-                <p>Bogotá, Colombia</p>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <p>RETROGAMES © 2026</p>
+  <section class="banner">
+    <h1>CONOCE RETROGAMES</h1>
     <p>El pasado se juega, el futuro se aprende.</p>
-</footer>
+  </section>
+
+  <main class="content">
+
+    <section class="info-section">
+      <h2>¿QUIÉNES SOMOS?</h2>
+      <p>
+        RetroGames es un proyecto digital que busca recuperar la esencia de
+        los videojuegos clásicos y relacionarla con nuevas experiencias de
+        aprendizaje. Nuestra propuesta combina entretenimiento, interacción
+        y tecnología para mostrar cómo los videojuegos pueden convertirse
+        en herramientas de estimulación cognitiva.
+      </p>
+
+      <div class="gallery">
+        <img src="the%20girl.jpeg" alt="Imagen de RetroGames">
+        <img src="the%20tower.jpeg" alt="Imagen de videojuegos clásicos">
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>NUESTRA MISIÓN</h2>
+      <p>
+        RetroGames es una plataforma digital que busca promover el aprendizaje
+        y el desarrollo de habilidades cognitivas mediante experiencias
+        interactivas inspiradas en los videojuegos clásicos. A través del
+        entretenimiento, fomenta la memoria, la concentración, el pensamiento
+        lógico y la agilidad mental.
+      </p>
+    </section>
+
+    <section class="info-section">
+      <h2>NUESTRA VISIÓN</h2>
+      <p>
+        Ser una plataforma educativa digital reconocida por integrar el
+        entretenimiento retro con nuevas experiencias de aprendizaje,
+        convirtiendo los videojuegos clásicos en herramientas que estimulen
+        el desarrollo cognitivo y la creatividad de sus usuarios.
+      </p>
+    </section>
+
+    <section class="info-section">
+      <h2>NUESTROS OBJETIVOS</h2>
+      <ul class="objectives">
+        <li>Promover el aprendizaje mediante videojuegos clásicos.</li>
+        <li>Estimular la memoria y la concentración.</li>
+        <li>Fortalecer el pensamiento lógico y estratégico.</li>
+        <li>Ofrecer experiencias digitales interactivas y entretenidas.</li>
+        <li>Conectar la nostalgia de los videojuegos retro con la educación.</li>
+      </ul>
+    </section>
+
+    <section class="info-section contact">
+      <h2>CONTACTO</h2>
+      <p><strong>Proyecto:</strong> RetroGames</p>
+      <p><strong>Correo:</strong> contacto@retrogames.com</p>
+      <p><strong>Teléfono:</strong> +57 300 000 0000</p>
+      <p><strong>Ubicación:</strong> Bogotá, Colombia</p>
+      <p><strong>Eslogan:</strong> El pasado se juega, el futuro se aprende.</p>
+      <p><em>Nota: los datos de contacto son demostrativos.</em></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>RETROGAMES © 2026 | EL PASADO SE JUEGA, EL FUTURO SE APRENDE.</p>
+  </footer>
 
 </body>
 </html>
