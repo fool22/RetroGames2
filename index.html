@@ -1,260 +1,277 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RetroGames: videojuegos clásicos y experiencias para estimular la memoria, la concentración y el pensamiento lógico.">
-    <title>RetroGames | Inicio</title>
-    <link rel="icon" href="img/hand.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetroGames | Inicio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            background: #040117;
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-        }
+    body {
+      background: #040117;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+    }
 
-        header {
-            background: #1C0946;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            border-bottom: 2px solid #7C3B93;
-        }
+    header {
+      background: #1C0946;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 3px solid #7C3B93;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-        .logo img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-        }
+    .brand img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
 
-        .logo h2 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 15px;
-        }
+    .brand h2 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 15px;
+      color: #fff;
+    }
 
-        nav {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
+    nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-            transition: .3s;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .3s;
+    }
 
-        nav a:hover { color: #c58be0; }
+    nav a:hover { color: #c58ce0; }
 
-        .hero {
-            min-height: 570px;
-            padding: 80px 8%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle, #200671 0%, #040117 75%);
-        }
+    .hero {
+      min-height: 580px;
+      padding: 70px 8%;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 45px;
+      background: radial-gradient(circle at 80% 40%, #510623 0%, #200671 38%, #040117 75%);
+    }
 
-        .hero h1 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: clamp(25px, 5vw, 48px);
-            color: #c58be0;
-            text-shadow: 0 0 20px #7C3B93;
-            margin-bottom: 25px;
-        }
+    .hero h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: clamp(25px, 4vw, 43px);
+      line-height: 1.7;
+      margin-bottom: 25px;
+      color: #fff;
+    }
 
-        .eslogan {
-            font-family: 'Press Start 2P', cursive;
-            color: white;
-            font-size: 12px;
-            line-height: 2;
-            margin-bottom: 25px;
-        }
+    .hero h1 span { color: #c58ce0; }
 
-        .hero p {
-            max-width: 750px;
-            line-height: 1.9;
-            font-size: 15px;
-            color: #ddd4eb;
-        }
+    .slogan {
+      color: #e4b8ff;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 22px;
+      line-height: 1.8;
+    }
 
-        .botones {
-            display: flex;
-            gap: 15px;
-            margin-top: 35px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .hero p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #e1d9ed;
+      max-width: 620px;
+    }
 
-        .boton {
-            padding: 14px 22px;
-            background: #510623;
-            color: white;
-            border: 1px solid #7C3B93;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 12px;
-            transition: .3s;
-        }
+    .hero-image img {
+      width: 100%;
+      max-height: 390px;
+      object-fit: cover;
+      border: 3px solid #7C3B93;
+      border-radius: 18px;
+      box-shadow: 0 0 30px #7C3B9360;
+    }
 
-        .boton:hover {
-            background: #7C3B93;
-            transform: translateY(-3px);
-        }
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
 
-        .seccion {
-            padding: 65px 8%;
-            text-align: center;
-        }
+    .btn {
+      display: inline-block;
+      padding: 14px 20px;
+      background: #7C3B93;
+      color: white;
+      border: 2px solid #c58ce0;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      transition: .3s;
+    }
 
-        .seccion h2 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 17px;
-            color: #c58be0;
-            margin-bottom: 35px;
-            line-height: 1.8;
-        }
+    .btn:hover {
+      background: #510623;
+      transform: translateY(-3px);
+    }
 
-        .tarjetas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
+    .section {
+      padding: 65px 8%;
+      text-align: center;
+    }
 
-        .tarjeta {
-            background: linear-gradient(145deg, #1C0946, #200671);
-            padding: 30px 20px;
-            border: 1px solid #7C3B93;
-            border-radius: 12px;
-            transition: .3s;
-        }
+    .section h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #c58ce0;
+      font-size: 19px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
 
-        .tarjeta:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 20px #7C3B93;
-        }
+    .section > p {
+      max-width: 850px;
+      margin: auto;
+      color: #ddd4ec;
+      font-size: 14px;
+      line-height: 1.9;
+    }
 
-        .tarjeta h3 {
-            color: #d6a4ed;
-            margin-bottom: 15px;
-            font-size: 17px;
-        }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 38px;
+    }
 
-        .tarjeta p {
-            font-size: 13px;
-            line-height: 1.8;
-            color: #ddd4eb;
-        }
+    .feature {
+      background: linear-gradient(145deg, #1C0946, #200671);
+      border: 1px solid #7C3B93;
+      padding: 28px 20px;
+      border-radius: 12px;
+    }
 
-        footer {
-            background: #1C0946;
-            padding: 25px;
-            text-align: center;
-            border-top: 2px solid #7C3B93;
-            font-size: 11px;
-            line-height: 2;
-        }
+    .feature h3 {
+      color: #e4b8ff;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
 
-        @media (max-width: 600px) {
-            header { justify-content: center; }
-            nav { justify-content: center; }
-            .logo h2 { font-size: 12px; }
-            .hero { padding: 65px 6%; }
-        }
-    </style>
+    .feature p {
+      color: #ddd4ec;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer {
+      background: #1C0946;
+      border-top: 2px solid #7C3B93;
+      text-align: center;
+      padding: 24px;
+      color: #d9c7ec;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero p { margin: auto; }
+      .buttons { justify-content: center; }
+      .features { grid-template-columns: 1fr; }
+      header { justify-content: center; }
+      nav { justify-content: center; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">
-        <img src="img/Logo retro.jpeg" alt="Logo retro">
-        <h2>RETROGAMES</h2>
+  <header>
+    <div class="brand">
+      <img src="logo%20retro.jpeg" alt="Logo RetroGames">
+      <h2>RETROGAMES</h2>
     </div>
 
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="description.html">Descripción</a>
-        <a href="Gamespage.html">Juegos</a>
+      <a href="index.html">INICIO</a>
+      <a href="description.html">NOSOTROS</a>
+      <a href="Gamespage.html">JUEGOS</a>
     </nav>
-</header>
+  </header>
 
-<main>
+  <main>
     <section class="hero">
-        <h1>RETROGAMES</h1>
+      <div>
+        <h1>BIENVENIDO A <span>RETROGAMES</span></h1>
 
-        <div class="eslogan">
-            EL PASADO SE JUEGA,<br>
-            EL FUTURO SE APRENDE.
+        <div class="slogan">
+          EL PASADO SE JUEGA, EL FUTURO SE APRENDE.
         </div>
 
         <p>
-            Bienvenido a RetroGames, un espacio digital que une la
-            nostalgia de los videojuegos clásicos con nuevas formas
-            de aprendizaje. Descubre experiencias interactivas que
-            estimulan la memoria, la concentración, la creatividad
-            y el pensamiento lógico.
+          Redescubre la magia de los videojuegos clásicos en una plataforma
+          que conecta el entretenimiento retro con el aprendizaje. Explora
+          experiencias interactivas que estimulan la memoria, la concentración,
+          el pensamiento lógico y la agilidad mental.
         </p>
 
-        <div class="botones">
-            <a href="Gamespage.html" class="boton">EXPLORAR JUEGOS</a>
-            <a href="description.html" class="boton">CONOCER EL PROYECTO</a>
+        <div class="buttons">
+          <a class="btn" href="Gamespage.html">EXPLORAR JUEGOS</a>
+          <a class="btn" href="description.html">CONOCER EL PROYECTO</a>
         </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="hand.jpg" alt="Experiencia de videojuegos retro">
+      </div>
     </section>
 
-    <section class="seccion">
-        <h2>JUGAR TAMBIÉN ES APRENDER</h2>
+    <section class="section">
+      <h2>¿POR QUÉ RETROGAMES?</h2>
+      <p>
+        Los videojuegos clásicos son más que entretenimiento: pueden convertirse
+        en experiencias que estimulan diferentes habilidades cognitivas.
+        RetroGames busca recuperar esa esencia y relacionarla con nuevas formas
+        de aprendizaje digital.
+      </p>
 
-        <div class="tarjetas">
-            <article class="tarjeta">
-                <h3>Memoria</h3>
-                <p>
-                    Fortalece la capacidad de recordar información
-                    mediante actividades y desafíos interactivos.
-                </p>
-            </article>
+      <div class="features">
+        <article class="feature">
+          <h3>MEMORIA</h3>
+          <p>Estimula la capacidad de recordar, reconocer patrones y retener información.</p>
+        </article>
 
-            <article class="tarjeta">
-                <h3>Pensamiento lógico</h3>
-                <p>
-                    Desarrolla la resolución de problemas,
-                    la estrategia y el razonamiento.
-                </p>
-            </article>
+        <article class="feature">
+          <h3>CONCENTRACIÓN</h3>
+          <p>Promueve la atención y el enfoque mediante experiencias interactivas.</p>
+        </article>
 
-            <article class="tarjeta">
-                <h3>Agilidad mental</h3>
-                <p>
-                    Estimula la atención, la rapidez de respuesta
-                    y la capacidad de concentración.
-                </p>
-            </article>
-        </div>
+        <article class="feature">
+          <h3>PENSAMIENTO LÓGICO</h3>
+          <p>Invita a resolver retos, analizar situaciones y tomar decisiones estratégicas.</p>
+        </article>
+      </div>
     </section>
-</main>
+  </main>
 
-<footer>
-    <p>RETROGAMES © 2026</p>
-    <p>El pasado se juega, el futuro se aprende.</p>
-</footer>
+  <footer>
+    <p>RETROGAMES © 2026 | EL PASADO SE JUEGA, EL FUTURO SE APRENDE.</p>
+  </footer>
 
 </body>
-</html>
+</html>roll
