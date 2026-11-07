@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora la galería RetroGames y descubre experiencias inspiradas en los juegos clásicos.">
+    <title>RetroGames | Juegos</title>
+    <link rel="icon" href="img/hand.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #040117;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        header {
+            background: #1C0946;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 2px solid #7C3B93;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .logo h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 15px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        nav a:hover { color: #c58be0; }
+
+        .portada {
+            text-align: center;
+            padding: 65px 7%;
+            background: radial-gradient(circle, #200671, #040117 75%);
+        }
+
+        .portada h1 {
+            font-family: 'Press Start 2P', cursive;
+            color: #c58be0;
+            font-size: clamp(22px, 4vw, 35px);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .portada p {
+            color: #ddd4eb;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1150px;
+            margin: auto;
+            padding: 50px 7%;
+        }
+
+        .juego {
+            height: 330px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .interior {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform .7s;
+        }
+
+        .juego.girada .interior {
+            transform: rotateY(180deg);
+        }
+
+        .frente, .reverso {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 2px solid #7C3B93;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #1C0946, #200671);
+            box-shadow: 0 0 12px rgba(124, 59, 147, .25);
+        }
+
+        .frente img {
+            width: 100%;
+            height: 255px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .frente h3 {
+            text-align: center;
+            padding: 20px 10px;
+            color: #e3b9f5;
+            font-size: 15px;
+        }
+
+        .reverso {
+            transform: rotateY(180deg);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .reverso h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: #d6a4ed;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .reverso p {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #eee7f7;
+        }
+
+        .indicacion {
+            text-align: center;
+            color: #c58be0;
+            font-size: 12px;
+            padding: 0 15px 35px;
+        }
+
+        footer {
+            background: #1C0946;
+            padding: 25px;
+            text-align: center;
+            border-top: 2px solid #7C3B93;
+            font-size: 11px;
+            line-height: 2;
+        }
+
+        @media (max-width: 600px) {
+            header { justify-content: center; }
+            nav { justify-content: center; }
+            .logo h2 { font-size: 12px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .interior { transition: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/logo-retro.jpeg" alt="Logo de RetroGames">
+        <h2>RETROGAMES</h2>
+    </div>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="description.html">Descripción</a>
+        <a href="Gamespage.html">Juegos</a>
+    </nav>
+</header>
+
+<section class="portada">
+    <h1>GALERÍA RETRO</h1>
+    <p>
+        Explora nuestra colección y descubre los desafíos
+        que estimulan tu imaginación y tu mente.
+    </p>
+</section>
+
+<main>
+    <section class="galeria">
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Fool">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/thefool.jpeg" alt="Carta The Fool">
+                    <h3>The Fool</h3>
+                </div>
+                <div class="reverso">
+                    <h3>The Fool</h3>
+                    <p>Representa el comienzo de nuevas aventuras, la curiosidad y la exploración.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Girl">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/the girl.jpeg" alt="Carta The Girl">
+                    <h3>The Girl</h3>
+                </div>
+                <div class="reverso">
+                    <h3>The Girl</h3>
+                    <p>Una invitación a descubrir nuevas perspectivas y desarrollar la creatividad.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Tower">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/the tower.jpeg" alt="Carta The Tower">
+                    <h3>The Tower</h3>
+                </div>
+                <div class="reverso">
+                    <h3>The Tower</h3>
+                    <p>Simboliza los desafíos, la transformación y la capacidad de resolver problemas.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir Kitti">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/kitti.jpeg" alt="Carta Kitti">
+                    <h3>Kitti</h3>
+                </div>
+                <div class="reverso">
+                    <h3>Kitti</h3>
+                    <p>Una experiencia que representa la diversión, la imaginación y la curiosidad.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Death">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/the death.jpeg" alt="Carta The Death">
+                    <h3>The Death</h3>
+                </div>
+                <div class="reverso">
+                    <h3>The Death</h3>
+                    <p>Representa el cambio, los nuevos comienzos y la adaptación a diferentes situaciones.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Dragon">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/the dragon.jpeg" alt="Carta The Dragon">
+                    <h3>The Dragon</h3>
+                </div>
+                <div class="reverso">
+                    <h3>The Dragon</h3>
+                    <p>Representa la imaginación, la estrategia y el valor para afrontar retos.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Justice">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/the justice.jpeg" alt="Carta The Justice">
+                    <h3>The Justice</h3>
+                </div>
+                <div class="reverso">
+                    <h3>The Justice</h3>
+                    <p>Invita a tomar decisiones, analizar situaciones y desarrollar el pensamiento crítico.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Magician">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/the magician.jpeg" alt="Carta The Magician">
+                    <h3>The Magician</h3>
+                </div>
+                <div class="reverso">
+                    <h3>The Magician</h3>
+                    <p>Simboliza la creatividad, el ingenio y el uso de habilidades para superar retos.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="juego" tabindex="0" role="button" aria-label="Descubrir The Hanged Man">
+            <div class="interior">
+                <div class="frente">
+                    <img src="img/the hanged man.jpeg" alt="Carta The Hanged Man">
+                    <h3>The Hanged Man</h3>
+                </div>
+                <div class="reverso">
+                    <h3>The Hanged Man</h3>
+                    <p>Representa la paciencia, la observación y la búsqueda de nuevas soluciones.</p>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <p class="indicacion">
+        HAZ CLIC O PULSA ENTER SOBRE UNA CARTA PARA DESCUBRIR SU DESCRIPCIÓN
+    </p>
+</main>
+
+<footer>
+    <p>RETROGAMES © 2026</p>
+    <p>El pasado se juega, el futuro se aprende.</p>
+</footer>
+
+<script>
+    function girar(elemento) {
+        elemento.classList.toggle("girada");
+    }
+
+    document.querySelectorAll(".juego").forEach(function (carta) {
+        carta.addEventListener("click", function () {
+            girar(carta);
+        });
+
+        carta.addEventListener("keydown", function (evento) {
+            if (evento.key === "Enter" || evento.key === " ") {
+                evento.preventDefault();
+                girar(carta);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

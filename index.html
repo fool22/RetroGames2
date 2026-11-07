@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RetroGames: videojuegos clásicos y experiencias para estimular la memoria, la concentración y el pensamiento lógico.">
+    <title>RetroGames | Inicio</title>
+    <link rel="icon" href="img/hand.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #040117;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        header {
+            background: #1C0946;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 2px solid #7C3B93;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+        }
+
+        .logo h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 15px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        nav a:hover { color: #c58be0; }
+
+        .hero {
+            min-height: 570px;
+            padding: 80px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, #200671 0%, #040117 75%);
+        }
+
+        .hero h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(25px, 5vw, 48px);
+            color: #c58be0;
+            text-shadow: 0 0 20px #7C3B93;
+            margin-bottom: 25px;
+        }
+
+        .eslogan {
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            font-size: 12px;
+            line-height: 2;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            line-height: 1.9;
+            font-size: 15px;
+            color: #ddd4eb;
+        }
+
+        .botones {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .boton {
+            padding: 14px 22px;
+            background: #510623;
+            color: white;
+            border: 1px solid #7C3B93;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        .boton:hover {
+            background: #7C3B93;
+            transform: translateY(-3px);
+        }
+
+        .seccion {
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+        .seccion h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 17px;
+            color: #c58be0;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: linear-gradient(145deg, #1C0946, #200671);
+            padding: 30px 20px;
+            border: 1px solid #7C3B93;
+            border-radius: 12px;
+            transition: .3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px #7C3B93;
+        }
+
+        .tarjeta h3 {
+            color: #d6a4ed;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .tarjeta p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #ddd4eb;
+        }
+
+        footer {
+            background: #1C0946;
+            padding: 25px;
+            text-align: center;
+            border-top: 2px solid #7C3B93;
+            font-size: 11px;
+            line-height: 2;
+        }
+
+        @media (max-width: 600px) {
+            header { justify-content: center; }
+            nav { justify-content: center; }
+            .logo h2 { font-size: 12px; }
+            .hero { padding: 65px 6%; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="img/Logo retro.jpeg" alt="Logo retro">
+        <h2>RETROGAMES</h2>
+    </div>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="description.html">Descripción</a>
+        <a href="Gamespage.html">Juegos</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>RETROGAMES</h1>
+
+        <div class="eslogan">
+            EL PASADO SE JUEGA,<br>
+            EL FUTURO SE APRENDE.
+        </div>
+
+        <p>
+            Bienvenido a RetroGames, un espacio digital que une la
+            nostalgia de los videojuegos clásicos con nuevas formas
+            de aprendizaje. Descubre experiencias interactivas que
+            estimulan la memoria, la concentración, la creatividad
+            y el pensamiento lógico.
+        </p>
+
+        <div class="botones">
+            <a href="Gamespage.html" class="boton">EXPLORAR JUEGOS</a>
+            <a href="description.html" class="boton">CONOCER EL PROYECTO</a>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2>JUGAR TAMBIÉN ES APRENDER</h2>
+
+        <div class="tarjetas">
+            <article class="tarjeta">
+                <h3>Memoria</h3>
+                <p>
+                    Fortalece la capacidad de recordar información
+                    mediante actividades y desafíos interactivos.
+                </p>
+            </article>
+
+            <article class="tarjeta">
+                <h3>Pensamiento lógico</h3>
+                <p>
+                    Desarrolla la resolución de problemas,
+                    la estrategia y el razonamiento.
+                </p>
+            </article>
+
+            <article class="tarjeta">
+                <h3>Agilidad mental</h3>
+                <p>
+                    Estimula la atención, la rapidez de respuesta
+                    y la capacidad de concentración.
+                </p>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>RETROGAMES © 2026</p>
+    <p>El pasado se juega, el futuro se aprende.</p>
+</footer>
+
+</body>
+</html>
