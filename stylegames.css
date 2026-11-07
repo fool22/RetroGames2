@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+.body{
+   color: #730220;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+  padding: 0;
+   margin: 0;
+   font-family: "retro game",sans-serif;
+   font-weight: 300;
+   background-image: url("black3.jpg");
+   width: 100%;
+   height: 200vh;
+   background-size: cover;
+   background-repeat: no-repeat;
+   font-family: 'Readex Pro', sans-serif;
+ }
+
+
+ h1{
+   margin:0;
+   padding: 0;
+   font-size: 10em;
+   text-align: center;
+   height: 14vh;
+ }
+ h1 span{
+   animation: animate 2s linear infinite;
+ }
+ h1 span:nth-child(1){
+   animation-delay: 0s;
+ }
+ h1 span:nth-child(2){
+   animation-delay: 0.25s;
+ }
+ h1 span:nth-child(3){
+    animation-delay: 0.5s;
+  }
+  h1 span:nth-child(4){
+     animation-delay: 0.75s;
+   }
+ h1 span:nth-child(5){
+      animation-delay: 1s;
+    }
+ @keyframes animate {
+   0%,100%{
+     color:#730220;
+     filter:blur(90%);
+     text-shadow: 0 0 10px #00b3ff,
+                  0 0 20px #00b3ff,
+                  0 0 40px #00b3ff,
+                  0 0 80px #00b3ff,
+                  0 0 120px #00b3ff;
+   }
+    5%,95%{
+     color:#310273;
+     filter:blur(0);
+     text-shadow:  none;
+   }
+ }
+
+
+.cointeiner-title{
+  width: 68%;
+}
+header{
+  background-image: url("Logo retro.jpeg");
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+}
+header::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo{
+  float:left;
+  height: 80px;
+  width: 70px;
+  padding:10px 0;
+}
+nav {
+  float:right;
+}
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li{
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 25px;
+  position: relative;
+}
+nav a{
+  color: #4cd137;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav a:hover{
+  color: #e1b12c ;
+}
+nav a::before{
+  content:"";
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color:#eb2f06 ;
+  position: absolute;
+  top: 0;
+  transition: all ease-in-out 250ms;
+}
+nav a:hover::before{
+  width: 100%;
+}
+
+.image-conteiner {
+  background-color: blue;
+  width: 300px;
+  height: 600px;
+  position: relative;
+  margin: auto;
+}
+.image-conteiner img {
+  width: 300px;
+  height: 600px;
+}
+.fade::after{
+  content: "";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.fade:hover::after {
+  opacity: 1;
+  transition-duration: 1s;
+    background-image: url("the dragon.jpeg");
+    background-size:  cover;
+    background-position: center;
+    transform: rotateY(180deg);
+}
+
+.middle {
+  position: absolute;
+  top: 106%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn {
+  text-align: center;
+  position:  relative;
+  display: block;
+  color: #0984e3;
+  font-size: 14px;
+font-family: cursive;
+text-decoration: none;
+margin: 10px 0;
+border: 1px solid #ff7675;
+border-radius: 20px;
+padding: 10px 60px;
+text-transform: uppercase;
+overflow: hidden;
+transition: 1s all ease;
+}
+
+.btn::before{
+  background: #ff7675;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.btn1::before{
+  width: 0;
+  height: 100%;
+}
+
+.btn1:hover::before{
+  width: 100%;
+}
+.image-cointeiner2 {
+  background-color: yellow;
+  width: 300px;
+  height: 600px;
+  position:absolute;
+  margin: 98px;
+  right: 30%;
+}
+.image-conteiner2 img {
+  width: 500px;
+  height: 600px;
+}
+.fade2::after{
+  content: "";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.fade2:hover::after {
+  opacity: 0.5;
+}
+.middle2 {
+  position: absolute;
+  top: 106%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn2::before{
+  background: #ff7675;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.btn2::before{
+  width: 0;
+  height: 100%;
+}
+
+.btn2:hover::before{
+  width: 100%;
+}
+
+
+
+.image-cointeiner3 {
+  background-color: yellow;
+  width: 300px;
+  height: 600px;
+  position:absolute;
+  margin: 98px;
+  right:800px;
+  left: 67px;
+}
+
+.image-conteiner3 img {
+  width: 500px;
+  height: 600px;
+}
+.fade3::after{
+  content: "";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.fade3:hover::after {
+  opacity: 0.5;
+}
+.middle3 {
+  position: absolute;
+  top: 106%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn3::before{
+  background: #ff7675;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.btn3::before{
+  width: 0;
+  height: 100%;
+}
+.btn3:hover::before{
+  width: 100%;
+}
+
+.image-cointeiner4 {
+  background-color: yellow;
+  width: 300px;
+  height: 600px;
+  position:absolute;
+  margin: 98px;
+  right: 800px;
+  left: 55%;
+}
+
+.image-conteiner4 img {
+  width: 500px;
+  height: 600px;
+}
+.fade4::after{
+  content: "";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.fade4:hover::after {
+  opacity: 0.5;
+}
+.middle4 {
+  position: absolute;
+  top: 106%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn4::before{
+  background: #ff7675;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.btn4::before{
+  width: 0;
+  height: 100%;
+}
+.btn4:hover::before{
+  width: 100%;
+}
+.image-cointeiner5 {
+  background-color: yellow;
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  margin: 98px;
+  right: 800px;
+  top: 73px;
+  left: 70px;
+}
+.image-conteiner5 img {
+  width: 300px;
+  height: 600px;
+}
+.fade5::after{
+  content: "";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.fade5:hover::after {
+  opacity: 1;
+  transition-duration: 1s;
+  background-image: url("the girl.jpeg");
+  background-size:cover;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+.middle5 {
+  position: absolute;
+  top: 106%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn5::before{
+  background: #560BBF;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.btn5::before{
+  width: 0;
+  height: 100%;
+}
+.btn5:hover::before{
+  width: 100%;
+}
+
+
+.image-cointeiner6 {
+  background-color: yellow;
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  margin: 98px;
+  left:710px;
+  top: 73px;
+
+}
+.image-conteiner6 img {
+  width: 300px;
+  height: 600px;
+}
+
+.fade6::after{
+  content: "";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  background: black;
+  width: 103%;
+  height: 103%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform-style: preserve-3d;
+  transition-duration: 0.5s;
+}
+.fade6:hover::after {
+  opacity: 1;
+  transition-duration: 1s;
+    background-image: url("kitti.jpeg");
+    background-size:  cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    height: 100%;
+}
+.middle6 {
+  position: absolute;
+  top: 106%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.btn6::before{
+  background:#ff7675
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.btn6::before{
+  width: 0;
+  height: 100%;
+}
+.btn6:hover::before{
+  width: 100%;
+}
